@@ -1,0 +1,11 @@
+# ninja log v5
+367	413	1715806993333222271	3bodysimulatornative	31917c169409ce35
+6	72	1715806992993505018	CMakeFiles/3bodysimulatornative.dir/vendor/glad/glad.c.o	fc6efb8f722b3670
+6	367	1715806993286762553	CMakeFiles/3bodysimulatornative.dir/main.cpp.o	cf729f931b6b555f
+1	47	1715807049282645344	build.ninja	4c2c19a655bc3b6d
+1	6	0	clean	ad90e366ad70d77b
+7	77	1715807142458741931	CMakeFiles/3bodysimulatornative.dir/vendor/glad/glad.c.o	fc6efb8f722b3670
+7	71	1715807181043561194	CMakeFiles/3bodysimulatornative.dir/vendor/glad/glad.c.o	fc6efb8f722b3670
+7	88	1715807209137898474	CMakeFiles/3bodysimulatornative.dir/vendor/glad/glad.c.o	fc6efb8f722b3670
+7	375	1715807209423638344	CMakeFiles/3bodysimulatornative.dir/main.cpp.o	cf729f931b6b555f
+375	418	1715807209467087279	3bodysimulatornative	31917c169409ce35
