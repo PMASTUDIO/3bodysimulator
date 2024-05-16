@@ -4,7 +4,11 @@
 
 #pragma once
 #include <vector>
-#include <glad/glad.h>
+
+#ifdef WITH_EMSCRIPTEN
+#else
+    #include <glad/glad.h>
+#endif
 
 struct ShaderFile {
     std::string filePath;

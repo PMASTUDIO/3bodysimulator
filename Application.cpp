@@ -6,7 +6,11 @@
 
 #include <iostream>
 #include <GLFW/glfw3.h>
-#include <glad/glad.h>
+
+#ifdef WITH_EMSCRIPTEN
+#else
+    #include <glad/glad.h>
+#endif
 
 #include <random>
 #include <vector>
