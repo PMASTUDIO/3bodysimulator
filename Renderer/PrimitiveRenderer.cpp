@@ -13,14 +13,14 @@
 
 #include "Shader.h"
 
-PrimitiveRenderer::PrimitiveRenderer(PrimitiveType type)  {
+PrimitiveRenderer::PrimitiveRenderer(PrimitiveType type, float scale)  {
     switch (type) {
         case PrimitiveType::SPHERE: {
-            m_Geometry = GenerateSphere(5.0f);
+            m_Geometry = GenerateSphere(scale);
             break;
         }
         case PrimitiveType::CUBE: {
-            m_Geometry = GenerateCube(1.0f);
+            m_Geometry = GenerateCube(scale);
             break;
         }
         case PrimitiveType::TRIANGLE: {

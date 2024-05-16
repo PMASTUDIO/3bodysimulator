@@ -24,7 +24,7 @@ struct PrimitiveGeometry {
 
 class PrimitiveRenderer {
 public:
-    PrimitiveRenderer(PrimitiveType type);
+    PrimitiveRenderer(PrimitiveType type, float scale);
 
     void Init();
     void Render(glm::mat4 projection);
