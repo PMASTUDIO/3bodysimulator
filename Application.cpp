@@ -16,6 +16,9 @@
 #include <vector>
 #include <string>
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+
 #include "Renderer/PrimitiveRenderer.h"
 #include "Renderer/Shader.h"
 
@@ -24,7 +27,7 @@
 namespace Simulator {
     static Application* s_Instance = nullptr;
 
-    PrimitiveRenderer sphereRenderer(PrimitiveType::CUBE);
+    PrimitiveRenderer sphereRenderer(PrimitiveType::SPHERE);
 
     Application::Application(const ApplicationSpecification &spec)
     : m_Specification(spec)
@@ -58,7 +61,6 @@ namespace Simulator {
         glfwSwapInterval(1);
 
         // TRIANGLE TEST
-
         sphereRenderer.Init();
 
         while (!glfwWindowShouldClose(m_Window)) {
@@ -83,7 +85,9 @@ namespace Simulator {
     void Application::OnRender() {
         glClearColor(0.2, 0.2, 0.2, 1.0);
 
-        sphereRenderer.Render();
+        glm::mat4 proj = glm::perspective(glm::radians(45.0f), (float)m_Specification.width/(float)m_Specification.height, 0.1f, 100.0f);
+
+        sphereRenderer.Render(proj);
     }
 
     Application & Application::Get() {

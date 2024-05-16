@@ -6,6 +6,8 @@
 
 #include <vector>
 
+#include <glm/glm.hpp>
+
 enum class PrimitiveType {
     SPHERE,
     CUBE,
@@ -16,7 +18,6 @@ struct PrimitiveGeometry {
     std::vector<float> vertices;
     std::vector<float> normals;
     std::vector<int> indices;
-    std::vector<int> lineIndices;
 
     int stride;
 };
@@ -26,7 +27,7 @@ public:
     PrimitiveRenderer(PrimitiveType type);
 
     void Init();
-    void Render();
+    void Render(glm::mat4 projection);
 private:
     static PrimitiveGeometry GenerateSphere(float radius);
     static PrimitiveGeometry GenerateCube(float length);

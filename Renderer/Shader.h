@@ -10,6 +10,8 @@
     #include <glad/glad.h>
 #endif
 
+#include <string>
+
 struct ShaderFile {
     std::string filePath;
     GLenum type;

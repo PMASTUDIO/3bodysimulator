@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <filesystem>
 
 static std::string ReadFileAsString(const std::string& filepath)
 {
