@@ -7,7 +7,9 @@ add_executable(3bodysimulatornative main.cpp "vendor/glad/glad.c"
         Application.cpp
         Application.h
         Renderer/Shader.cpp
-        Renderer/Shader.h)
+        Renderer/Shader.h
+        Renderer/PrimitiveRenderer.cpp
+        Renderer/PrimitiveRenderer.h)
 
 target_include_directories(3bodysimulatornative PUBLIC vendor/include)
 link_directories(${CMAKE_CURRENT_SOURCE_DIR}/vendor/lib)

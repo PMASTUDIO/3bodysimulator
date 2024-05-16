@@ -81,6 +81,14 @@ build CMakeFiles/3bodysimulatornative.dir/Renderer/Shader.cpp.o: CXX_COMPILER__3
   OBJECT_DIR = CMakeFiles/3bodysimulatornative.dir
   OBJECT_FILE_DIR = CMakeFiles/3bodysimulatornative.dir/Renderer
 
+build CMakeFiles/3bodysimulatornative.dir/Renderer/PrimitiveRenderer.cpp.o: CXX_COMPILER__3bodysimulatornative_unscanned_Debug /Users/pedroganme/CLionProjects/3bodysimulatornative/Renderer/PrimitiveRenderer.cpp || cmake_object_order_depends_target_3bodysimulatornative
+  DEFINES = -DGLAD_GL_IMPLEMENTATION -DGLFW_INCLUDE_NONE
+  DEP_FILE = CMakeFiles/3bodysimulatornative.dir/Renderer/PrimitiveRenderer.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.0 -fcolor-diagnostics
+  INCLUDES = -I/Users/pedroganme/CLionProjects/3bodysimulatornative/vendor/include -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks
+  OBJECT_DIR = CMakeFiles/3bodysimulatornative.dir
+  OBJECT_FILE_DIR = CMakeFiles/3bodysimulatornative.dir/Renderer
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target 3bodysimulatornative
@@ -89,7 +97,7 @@ build CMakeFiles/3bodysimulatornative.dir/Renderer/Shader.cpp.o: CXX_COMPILER__3
 #############################################
 # Link the executable 3bodysimulatornative
 
-build 3bodysimulatornative: CXX_EXECUTABLE_LINKER__3bodysimulatornative_Debug CMakeFiles/3bodysimulatornative.dir/main.cpp.o CMakeFiles/3bodysimulatornative.dir/vendor/glad/glad.c.o CMakeFiles/3bodysimulatornative.dir/Application.cpp.o CMakeFiles/3bodysimulatornative.dir/Renderer/Shader.cpp.o | /opt/homebrew/lib/libglfw.3.4.dylib /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenGL.framework
+build 3bodysimulatornative: CXX_EXECUTABLE_LINKER__3bodysimulatornative_Debug CMakeFiles/3bodysimulatornative.dir/main.cpp.o CMakeFiles/3bodysimulatornative.dir/vendor/glad/glad.c.o CMakeFiles/3bodysimulatornative.dir/Application.cpp.o CMakeFiles/3bodysimulatornative.dir/Renderer/Shader.cpp.o CMakeFiles/3bodysimulatornative.dir/Renderer/PrimitiveRenderer.cpp.o | /opt/homebrew/lib/libglfw.3.4.dylib /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenGL.framework
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.0
   LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/lib  /opt/homebrew/lib/libglfw.3.4.dylib  -framework OpenGL
   OBJECT_DIR = CMakeFiles/3bodysimulatornative.dir
