@@ -16,16 +16,15 @@
 #include <vector>
 #include <string>
 
+#include "Renderer/PrimitiveRenderer.h"
 #include "Renderer/Shader.h"
 
-float vertices[] = {
-    -0.5f, -0.5f, 0.0f,
-     0.5f, -0.5f, 0.0f,
-     0.0f, 0.5f, 0.0f
-};
+
 
 namespace Simulator {
     static Application* s_Instance = nullptr;
+
+    PrimitiveRenderer sphereRenderer(PrimitiveType::CUBE);
 
     Application::Application(const ApplicationSpecification &spec)
     : m_Specification(spec)
@@ -59,34 +58,16 @@ namespace Simulator {
         glfwSwapInterval(1);
 
         // TRIANGLE TEST
-        unsigned int VBO, VAO;
-        glGenVertexArrays(1, &VAO);
-        glGenBuffers(1, &VBO);
 
-        glBindVertexArray(VAO);
-        glBindBuffer(GL_ARRAY_BUFFER, VBO);
-        glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-        Shader* shaders = Shader::LoadFromFile(std::vector<ShaderFile>{
-            ShaderFile{"../Assets/Shaders/triangle_vertex.glsl", GL_VERTEX_SHADER},
-            ShaderFile{"../Assets/Shaders/triangle_frag.glsl", GL_FRAGMENT_SHADER}
-        });
-
-        glUseProgram(shaders->GetRendererID());
-
-        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3* sizeof(float), (void*)0);
-        glEnableVertexAttribArray(0);
+        sphereRenderer.Init();
 
         while (!glfwWindowShouldClose(m_Window)) {
             OnUpdate();
 
             glViewport(0, 0, m_Specification.width, m_Specification.height);
-            glClear(GL_COLOR_BUFFER_BIT);
-            OnRender();
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-            glUseProgram(shaders->GetRendererID());
-            glBindVertexArray(VAO);
-            glDrawArrays(GL_TRIANGLES, 0, 3);
+            OnRender();
 
             glfwSwapBuffers(m_Window);
             glfwPollEvents();
@@ -100,9 +81,9 @@ namespace Simulator {
     }
 
     void Application::OnRender() {
+        glClearColor(0.2, 0.2, 0.2, 1.0);
 
-
-        glClearColor(0.75, 0.22, 0.36, 1.0);
+        sphereRenderer.Render();
     }
 
     Application & Application::Get() {
