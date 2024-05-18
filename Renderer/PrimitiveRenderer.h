@@ -28,11 +28,15 @@ public:
 
     void Init();
     void Render(glm::mat4 projection);
+
+    void SetPosition(const glm::vec3& pos);
 private:
     static PrimitiveGeometry GenerateSphere(float radius);
     static PrimitiveGeometry GenerateCube(float length);
     static PrimitiveGeometry GenerateTriangle();
 private:
+    glm::mat4 m_ModelMatrix{1.0f};
+
     unsigned int m_VAO{}, m_VBO{}, m_IBO{};
     unsigned int m_Shader{};
 

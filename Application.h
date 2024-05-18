@@ -8,6 +8,7 @@
 #include <GLFW/glfw3.h>
 
 #include "Renderer/Camera.h"
+#include "Simulator/PhysicsBody.h"
 
 namespace Simulator {
 
@@ -36,6 +37,8 @@ namespace Simulator {
         void FramebufferSizeCallback(GLFWwindow* window, int width, int height);
     private:
         ApplicationSpecification m_Specification;
+
+        std::vector<PhysicsBody> bodies;
 
         bool m_FirstMouse = true;
         float m_LastX, m_LastY;

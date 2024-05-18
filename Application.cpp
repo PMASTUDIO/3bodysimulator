@@ -25,13 +25,13 @@
 namespace Simulator {
     static Application* s_Instance = nullptr;
 
-    PrimitiveRenderer sphereRenderer(PrimitiveType::SPHERE, 1.0f);
-
     Application::Application(const ApplicationSpecification &spec)
-    : m_Specification(spec)
-    {
+    : m_Specification(spec) {
         m_LastX = m_Specification.width / 2;
         m_LastY = m_Specification.height / 2;
+
+        bodies.emplace_back( 3000, 1.7, glm::vec3{0.5f, 0.0f, 0.0f}, glm::vec3{0.0f, 0.0f, -20.0f} );
+        bodies.emplace_back(100000, 6.4, glm::vec3{0.0f}, glm::vec3{0.0f, 0.0f, 0.0f} );
 
         s_Instance = this;
     }
@@ -105,7 +105,9 @@ namespace Simulator {
         glfwSetInputMode(m_Window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
         // TRIANGLE TEST
-        sphereRenderer.Init();
+        for (auto &body: bodies) {
+            body.Init();
+        }
 
         glViewport(0, 0, m_Specification.width, m_Specification.height);
         glEnable(GL_DEPTH_TEST);
@@ -131,13 +133,23 @@ namespace Simulator {
     }
 
     void Application::OnUpdate(Timestep ts) {
-       m_Camera.OnUpdate(ts, m_Window);
+        for (auto &body: bodies) {
+            body.UpdateVelocity(bodies, 0.01f);
+        }
+
+        for (auto &body: bodies) {
+            body.UpdatePosition(0.01f);
+        }
+
+        m_Camera.OnUpdate(ts, m_Window);
     }
 
     void Application::OnRender() {
-        glClearColor(0.2, 0.2, 0.2, 1.0);
+        glClearColor(0.0, 0.0, 0.0, 1.0);
 
-        sphereRenderer.Render(m_Camera.GetViewMatrix());
+        for (auto &body: bodies) {
+            body.Render(m_Camera.GetViewMatrix());
+        }
     }
 
     Application & Application::Get() {

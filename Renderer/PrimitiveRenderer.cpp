@@ -64,11 +64,18 @@ void PrimitiveRenderer::Render(glm::mat4 projection) {
     int projLoc = glGetUniformLocation(m_Shader, "projection");
     glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
 
+	int modelLoc = glGetUniformLocation(m_Shader, "model");
+	glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(m_ModelMatrix));
+
     glBindVertexArray(m_VAO);
     glDrawElements(GL_TRIANGLES, m_Geometry.indices.size(), GL_UNSIGNED_INT, 0);
     // glDrawArrays(GL_TRIANGLES, 0, 3);
 
     // glBindVertexArray(0);
+}
+
+void PrimitiveRenderer::SetPosition(const glm::vec3& pos) {
+	m_ModelMatrix = glm::translate(glm::mat4{1.0f}, pos);
 }
 
 PrimitiveGeometry PrimitiveRenderer::GenerateSphere(float radius) {
