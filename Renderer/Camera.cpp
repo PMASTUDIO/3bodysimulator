@@ -27,7 +27,7 @@ Camera::Camera(float posX, float posY, float posZ, float upX, float upY, float u
 }
 
 glm::mat4 Camera::GetViewMatrix() {
-    glm::mat4 proj = glm::perspective(glm::radians(Zoom), (float)1920/(float)1080, 0.1f, 100.0f);
+    glm::mat4 proj = glm::perspective(glm::radians(Zoom), (float)1920/(float)1080, 0.1f, 500.0f);
 
     return proj * glm::lookAt(Position, Position + Front, Up);
 }

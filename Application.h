@@ -44,7 +44,7 @@ namespace Simulator {
         float m_LastX, m_LastY;
         float m_LastFrameTime = 0.0f;
 
-        Camera m_Camera{ glm::vec3(0.0f, 0.0f, 3.0f) };
+        Camera m_Camera{ glm::vec3(0.0f, 0.0f, 0.0f) };
 
         GLFWwindow* m_Window;
     };

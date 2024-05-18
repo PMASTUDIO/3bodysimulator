@@ -30,8 +30,11 @@ namespace Simulator {
         m_LastX = m_Specification.width / 2;
         m_LastY = m_Specification.height / 2;
 
-        bodies.emplace_back( 3000, 1.7, glm::vec3{0.5f, 0.0f, 0.0f}, glm::vec3{0.0f, 0.0f, -20.0f} );
-        bodies.emplace_back(100000, 6.4, glm::vec3{0.0f}, glm::vec3{0.0f, 0.0f, 0.0f} );
+        bodies.emplace_back( 7.34e2, 1.740, glm::vec3{15.57f, 0.0f, 0.0f}, glm::vec3{0.0f, 0.0f, 192.0f} );
+        bodies.emplace_back(5.972e4, 6.371, glm::vec3{0.0f}, glm::vec3{0.0f, 0.0f, -192.0f} );
+        bodies.emplace_back(5.972e4, 6.371, glm::vec3{0.0f, 25.0f, 0.0f}, glm::vec3{0.0f, 0.0f, 0.0f} );
+
+        m_Camera.MovementSpeed = 30.0f;
 
         s_Instance = this;
     }

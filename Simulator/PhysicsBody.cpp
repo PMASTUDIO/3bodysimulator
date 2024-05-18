@@ -10,7 +10,7 @@
 
 #include <iostream>
 
-PhysicsBody::PhysicsBody(float mass, float radius, glm::vec3 velocity, glm::vec3 position) : m_Mass(mass), m_Radius(radius), m_Velocity(velocity), m_Position(position), m_Primitive(PrimitiveType::SPHERE, 1.0f) {
+PhysicsBody::PhysicsBody(float mass, float radius, glm::vec3 velocity, glm::vec3 position) : m_Mass(mass), m_Radius(radius), m_Velocity(velocity), m_Position(position), m_Primitive(PrimitiveType::SPHERE, radius) {
 }
 
 void PhysicsBody::Init() {
@@ -36,7 +36,7 @@ void PhysicsBody::UpdateVelocity(std::vector<PhysicsBody>& bodies, float dt) {
         }
     }
 
-    // std::cout << "Velocity X: " << m_Velocity.x << " Y: " << m_Velocity.y << " Z: " << m_Velocity.z << std::endl;
+    std::cout << "Velocity X: " << m_Velocity.x << " Y: " << m_Velocity.y << " Z: " << m_Velocity.z << std::endl;
 }
 
 void PhysicsBody::UpdatePosition(float dt) {
