@@ -2,7 +2,6 @@
 #define CAMERA_H
 
 #include <glad/glad.h>
-#include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
@@ -59,7 +58,7 @@ public:
     // processes input received from a mouse scroll-wheel event. Only requires input on the vertical wheel-axis
     void ProcessMouseScroll(float yoffset);
 
-    void OnUpdate(Timestep deltaTime, GLFWwindow* window);
+    void OnUpdate(Timestep deltaTime);
 
 private:
 

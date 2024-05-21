@@ -17,7 +17,10 @@ add_executable(3bodysimulatornative main.cpp "vendor/glad/glad.c"
         Simulator/PhysicsBody.h
         Renderer/Window.h
         Platform/Desktop/DesktopWindow.cpp
-        Platform/Desktop/DesktopWindow.h)
+        Platform/Desktop/DesktopWindow.h
+        Renderer/Input.h
+        Platform/Desktop/DesktopInput.cpp
+        Platform/Desktop/DesktopInput.h)
 
 target_include_directories(3bodysimulatornative PUBLIC vendor/include)
 link_directories(${CMAKE_CURRENT_SOURCE_DIR}/vendor/lib)

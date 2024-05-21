@@ -20,6 +20,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include "Platform/Desktop/DesktopWindow.h"
+#include "Renderer/Input.h"
 #include "Renderer/PrimitiveRenderer.h"
 #include "Utils/Timestep.h"
 
@@ -108,7 +109,7 @@ namespace Simulator {
     }
 
     void Application::OnUpdate(Timestep ts) {
-        if (glfwGetKey((GLFWwindow*)m_Window->GetNativeWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+        if(Input::IsKeyPressed(GLFW_KEY_ESCAPE)) {
             m_Running = false;
         }
 
@@ -120,7 +121,7 @@ namespace Simulator {
             body.UpdatePosition(0.01f);
         }
 
-        m_Camera.OnUpdate(ts, (GLFWwindow*)m_Window->GetNativeWindow());
+        m_Camera.OnUpdate(ts);
     }
 
     void Application::OnRender() {

@@ -18,6 +18,8 @@ namespace Simulator {
         explicit Application(const std::string& title = "3body Universe Simulator", unsigned int width = 1280, unsigned int height = 720);
         virtual ~Application();
 
+        inline Window& GetWindow() { return *m_Window; }
+
         void Run();
         void OnUpdate(Timestep ts);
         void OnRender();

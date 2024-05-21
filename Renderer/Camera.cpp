@@ -7,6 +7,8 @@
 #include <iostream>
 #include <GLFW/glfw3.h>
 
+#include "Input.h"
+
 Camera::Camera(glm::vec3 position, glm::vec3 up, float yaw, float pitch): Front(glm::vec3(0.0f, 0.0f, -1.0f)), MovementSpeed(SPEED), MouseSensitivity(SENSITIVITY), Zoom(ZOOM) {
 
 
@@ -73,14 +75,14 @@ void Camera::ProcessMouseScroll(float yoffset) {
         Zoom = 45.0f;
 }
 
-void Camera::OnUpdate(Timestep deltaTime, GLFWwindow* window) {
-    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+void Camera::OnUpdate(Timestep deltaTime) {
+    if (Input::IsKeyPressed( GLFW_KEY_W))
         ProcessKeyboard(FORWARD, deltaTime);
-    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+    if (Input::IsKeyPressed( GLFW_KEY_S))
         ProcessKeyboard(BACKWARD, deltaTime);
-    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+    if (Input::IsKeyPressed( GLFW_KEY_A))
         ProcessKeyboard(LEFT, deltaTime);
-    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+    if (Input::IsKeyPressed( GLFW_KEY_D))
         ProcessKeyboard(RIGHT, deltaTime);
 }
 
