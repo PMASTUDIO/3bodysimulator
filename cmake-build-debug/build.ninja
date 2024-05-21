@@ -50,7 +50,7 @@ cmake_ninja_workdir = /Users/pedroganme/CLionProjects/3bodysimulatornative/cmake
 build cmake_object_order_depends_target_3bodysimulatornative: phony || CMakeFiles/3bodysimulatornative.dir
 
 build CMakeFiles/3bodysimulatornative.dir/main.cpp.o: CXX_COMPILER__3bodysimulatornative_unscanned_Debug /Users/pedroganme/CLionProjects/3bodysimulatornative/main.cpp || cmake_object_order_depends_target_3bodysimulatornative
-  DEFINES = -DGLAD_GL_IMPLEMENTATION -DGLFW_INCLUDE_NONE
+  DEFINES = -DGLAD_GL_IMPLEMENTATION -DGLFW_INCLUDE_NONE -DGLM_ENABLE_EXPERIMENTAL
   DEP_FILE = CMakeFiles/3bodysimulatornative.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.0 -fcolor-diagnostics
   INCLUDES = -I/Users/pedroganme/CLionProjects/3bodysimulatornative/vendor/include -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks
@@ -58,7 +58,7 @@ build CMakeFiles/3bodysimulatornative.dir/main.cpp.o: CXX_COMPILER__3bodysimulat
   OBJECT_FILE_DIR = CMakeFiles/3bodysimulatornative.dir
 
 build CMakeFiles/3bodysimulatornative.dir/vendor/glad/glad.c.o: C_COMPILER__3bodysimulatornative_unscanned_Debug /Users/pedroganme/CLionProjects/3bodysimulatornative/vendor/glad/glad.c || cmake_object_order_depends_target_3bodysimulatornative
-  DEFINES = -DGLAD_GL_IMPLEMENTATION -DGLFW_INCLUDE_NONE
+  DEFINES = -DGLAD_GL_IMPLEMENTATION -DGLFW_INCLUDE_NONE -DGLM_ENABLE_EXPERIMENTAL
   DEP_FILE = CMakeFiles/3bodysimulatornative.dir/vendor/glad/glad.c.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.0 -fcolor-diagnostics
   INCLUDES = -I/Users/pedroganme/CLionProjects/3bodysimulatornative/vendor/include -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks
@@ -66,7 +66,7 @@ build CMakeFiles/3bodysimulatornative.dir/vendor/glad/glad.c.o: C_COMPILER__3bod
   OBJECT_FILE_DIR = CMakeFiles/3bodysimulatornative.dir/vendor/glad
 
 build CMakeFiles/3bodysimulatornative.dir/Application.cpp.o: CXX_COMPILER__3bodysimulatornative_unscanned_Debug /Users/pedroganme/CLionProjects/3bodysimulatornative/Application.cpp || cmake_object_order_depends_target_3bodysimulatornative
-  DEFINES = -DGLAD_GL_IMPLEMENTATION -DGLFW_INCLUDE_NONE
+  DEFINES = -DGLAD_GL_IMPLEMENTATION -DGLFW_INCLUDE_NONE -DGLM_ENABLE_EXPERIMENTAL
   DEP_FILE = CMakeFiles/3bodysimulatornative.dir/Application.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.0 -fcolor-diagnostics
   INCLUDES = -I/Users/pedroganme/CLionProjects/3bodysimulatornative/vendor/include -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks
@@ -74,7 +74,7 @@ build CMakeFiles/3bodysimulatornative.dir/Application.cpp.o: CXX_COMPILER__3body
   OBJECT_FILE_DIR = CMakeFiles/3bodysimulatornative.dir
 
 build CMakeFiles/3bodysimulatornative.dir/Renderer/Shader.cpp.o: CXX_COMPILER__3bodysimulatornative_unscanned_Debug /Users/pedroganme/CLionProjects/3bodysimulatornative/Renderer/Shader.cpp || cmake_object_order_depends_target_3bodysimulatornative
-  DEFINES = -DGLAD_GL_IMPLEMENTATION -DGLFW_INCLUDE_NONE
+  DEFINES = -DGLAD_GL_IMPLEMENTATION -DGLFW_INCLUDE_NONE -DGLM_ENABLE_EXPERIMENTAL
   DEP_FILE = CMakeFiles/3bodysimulatornative.dir/Renderer/Shader.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.0 -fcolor-diagnostics
   INCLUDES = -I/Users/pedroganme/CLionProjects/3bodysimulatornative/vendor/include -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks
@@ -82,12 +82,28 @@ build CMakeFiles/3bodysimulatornative.dir/Renderer/Shader.cpp.o: CXX_COMPILER__3
   OBJECT_FILE_DIR = CMakeFiles/3bodysimulatornative.dir/Renderer
 
 build CMakeFiles/3bodysimulatornative.dir/Renderer/PrimitiveRenderer.cpp.o: CXX_COMPILER__3bodysimulatornative_unscanned_Debug /Users/pedroganme/CLionProjects/3bodysimulatornative/Renderer/PrimitiveRenderer.cpp || cmake_object_order_depends_target_3bodysimulatornative
-  DEFINES = -DGLAD_GL_IMPLEMENTATION -DGLFW_INCLUDE_NONE
+  DEFINES = -DGLAD_GL_IMPLEMENTATION -DGLFW_INCLUDE_NONE -DGLM_ENABLE_EXPERIMENTAL
   DEP_FILE = CMakeFiles/3bodysimulatornative.dir/Renderer/PrimitiveRenderer.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.0 -fcolor-diagnostics
   INCLUDES = -I/Users/pedroganme/CLionProjects/3bodysimulatornative/vendor/include -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks
   OBJECT_DIR = CMakeFiles/3bodysimulatornative.dir
   OBJECT_FILE_DIR = CMakeFiles/3bodysimulatornative.dir/Renderer
+
+build CMakeFiles/3bodysimulatornative.dir/Renderer/Camera.cpp.o: CXX_COMPILER__3bodysimulatornative_unscanned_Debug /Users/pedroganme/CLionProjects/3bodysimulatornative/Renderer/Camera.cpp || cmake_object_order_depends_target_3bodysimulatornative
+  DEFINES = -DGLAD_GL_IMPLEMENTATION -DGLFW_INCLUDE_NONE -DGLM_ENABLE_EXPERIMENTAL
+  DEP_FILE = CMakeFiles/3bodysimulatornative.dir/Renderer/Camera.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.0 -fcolor-diagnostics
+  INCLUDES = -I/Users/pedroganme/CLionProjects/3bodysimulatornative/vendor/include -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks
+  OBJECT_DIR = CMakeFiles/3bodysimulatornative.dir
+  OBJECT_FILE_DIR = CMakeFiles/3bodysimulatornative.dir/Renderer
+
+build CMakeFiles/3bodysimulatornative.dir/Simulator/PhysicsBody.cpp.o: CXX_COMPILER__3bodysimulatornative_unscanned_Debug /Users/pedroganme/CLionProjects/3bodysimulatornative/Simulator/PhysicsBody.cpp || cmake_object_order_depends_target_3bodysimulatornative
+  DEFINES = -DGLAD_GL_IMPLEMENTATION -DGLFW_INCLUDE_NONE -DGLM_ENABLE_EXPERIMENTAL
+  DEP_FILE = CMakeFiles/3bodysimulatornative.dir/Simulator/PhysicsBody.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.0 -fcolor-diagnostics
+  INCLUDES = -I/Users/pedroganme/CLionProjects/3bodysimulatornative/vendor/include -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks
+  OBJECT_DIR = CMakeFiles/3bodysimulatornative.dir
+  OBJECT_FILE_DIR = CMakeFiles/3bodysimulatornative.dir/Simulator
 
 
 # =============================================================================
@@ -97,7 +113,7 @@ build CMakeFiles/3bodysimulatornative.dir/Renderer/PrimitiveRenderer.cpp.o: CXX_
 #############################################
 # Link the executable 3bodysimulatornative
 
-build 3bodysimulatornative: CXX_EXECUTABLE_LINKER__3bodysimulatornative_Debug CMakeFiles/3bodysimulatornative.dir/main.cpp.o CMakeFiles/3bodysimulatornative.dir/vendor/glad/glad.c.o CMakeFiles/3bodysimulatornative.dir/Application.cpp.o CMakeFiles/3bodysimulatornative.dir/Renderer/Shader.cpp.o CMakeFiles/3bodysimulatornative.dir/Renderer/PrimitiveRenderer.cpp.o | /opt/homebrew/lib/libglfw.3.4.dylib /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenGL.framework
+build 3bodysimulatornative: CXX_EXECUTABLE_LINKER__3bodysimulatornative_Debug CMakeFiles/3bodysimulatornative.dir/main.cpp.o CMakeFiles/3bodysimulatornative.dir/vendor/glad/glad.c.o CMakeFiles/3bodysimulatornative.dir/Application.cpp.o CMakeFiles/3bodysimulatornative.dir/Renderer/Shader.cpp.o CMakeFiles/3bodysimulatornative.dir/Renderer/PrimitiveRenderer.cpp.o CMakeFiles/3bodysimulatornative.dir/Renderer/Camera.cpp.o CMakeFiles/3bodysimulatornative.dir/Simulator/PhysicsBody.cpp.o | /opt/homebrew/lib/libglfw.3.4.dylib /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenGL.framework
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.0
   LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/lib  /opt/homebrew/lib/libglfw.3.4.dylib  -framework OpenGL
   OBJECT_DIR = CMakeFiles/3bodysimulatornative.dir

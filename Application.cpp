@@ -97,6 +97,7 @@ namespace Simulator {
         glfwSetFramebufferSizeCallback(m_Window, [](GLFWwindow* window, int width, int height) {
             static_cast<Application*>(glfwGetWindowUserPointer(window))->FramebufferSizeCallback(window, width, height);
         });
+
         glfwSetCursorPosCallback(m_Window, [](GLFWwindow* window, double xPos, double yPos) {
             static_cast<Application*>(glfwGetWindowUserPointer(window))->MouseCallback(window, xPos, yPos);
         });
@@ -112,7 +113,11 @@ namespace Simulator {
             body.Init();
         }
 
-        glViewport(0, 0, m_Specification.width, m_Specification.height);
+        int initial_framebuffer_width, initial_framebuffer_height;
+        glfwGetFramebufferSize(m_Window, &initial_framebuffer_width,
+                                 &initial_framebuffer_height);
+
+        glViewport(0, 0, initial_framebuffer_width, initial_framebuffer_height);
         glEnable(GL_DEPTH_TEST);
 
 
