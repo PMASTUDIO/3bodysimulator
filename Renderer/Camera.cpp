@@ -4,6 +4,7 @@
 
 #include "Camera.h"
 
+#include <iostream>
 #include <GLFW/glfw3.h>
 
 Camera::Camera(glm::vec3 position, glm::vec3 up, float yaw, float pitch): Front(glm::vec3(0.0f, 0.0f, -1.0f)), MovementSpeed(SPEED), MouseSensitivity(SENSITIVITY), Zoom(ZOOM) {
@@ -73,9 +74,6 @@ void Camera::ProcessMouseScroll(float yoffset) {
 }
 
 void Camera::OnUpdate(Timestep deltaTime, GLFWwindow* window) {
-    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, true);
-
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
         ProcessKeyboard(FORWARD, deltaTime);
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)

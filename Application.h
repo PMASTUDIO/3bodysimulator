@@ -8,23 +8,15 @@
 #include <GLFW/glfw3.h>
 
 #include "Renderer/Camera.h"
+#include "Renderer/Window.h"
 #include "Simulator/PhysicsBody.h"
 
 namespace Simulator {
 
-    struct ApplicationSpecification
-    {
-        int width = 1920;
-        int height = width / 16 * 9;
-        std::string title = "3body Universe Simulator";
-    };
-
     class Application {
     public:
-        explicit Application(const ApplicationSpecification& spec = ApplicationSpecification());
-        ~Application();
-
-        GLFWwindow* GetRawWindow() const { return m_Window; };
+        explicit Application(const std::string& title = "3body Universe Simulator", unsigned int width = 1280, unsigned int height = 720);
+        virtual ~Application();
 
         void Run();
         void OnUpdate(Timestep ts);
@@ -32,12 +24,10 @@ namespace Simulator {
     public:
         static Application& Get();
     private:
-        void MouseCallback(GLFWwindow* window, double xposIn, double yposIn);
-        void ScrollCallback(GLFWwindow* window, double xoffset, double yoffset);
-        void FramebufferSizeCallback(GLFWwindow* window, int width, int height);
+        void MouseCallback(double xposIn, double yposIn);
+        void ScrollCallback(double xoffset, double yoffset);
+        void FramebufferSizeCallback(int width, int height);
     private:
-        ApplicationSpecification m_Specification;
-
         std::vector<PhysicsBody> bodies;
 
         bool m_FirstMouse = true;
@@ -46,7 +36,8 @@ namespace Simulator {
 
         Camera m_Camera{ glm::vec3(0.0f, 0.0f, 0.0f) };
 
-        GLFWwindow* m_Window;
+        std::unique_ptr<Window> m_Window;
+        bool m_Running = true;
     };
 
 } // Simulator
