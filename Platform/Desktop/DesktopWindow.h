@@ -5,7 +5,7 @@
 #pragma once
 
 #include <GLFW/glfw3.h>
-#include "../../Renderer/Window.h"
+#include "../../Core/Window.h"
 
 class DesktopWindow : public Window {
 public:

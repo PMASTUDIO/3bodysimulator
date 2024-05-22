@@ -1,0 +1,2 @@
+#pragma code_page(65001)
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "C:/Users/pganm/CLionProjects/3bodysimulator/cmake-build-debug-visual-studio/CMakeFiles/3bodysimulatornative.dir/embed.manifest"

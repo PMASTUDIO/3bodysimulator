@@ -5,7 +5,7 @@
 #pragma once
 #include <utility>
 
-#include "../../Renderer/Input.h"
+#include "../../Core/Input.h"
 
 class DesktopInput : public Input {
 protected:

@@ -20,9 +20,9 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include "Platform/Desktop/DesktopWindow.h"
-#include "Renderer/Input.h"
+#include "Core/Input.h"
 #include "Renderer/PrimitiveRenderer.h"
-#include "Utils/Timestep.h"
+#include "Core/Timestep.h"
 
 namespace Simulator {
     static Application* s_Instance = nullptr;
@@ -37,17 +37,24 @@ namespace Simulator {
         m_Window->SetCursorPosCallback([this](float xPos, int yPos) { MouseCallback(xPos, yPos); });
         m_Window->SetWindowCloseCallback([this]() { m_Running = false; });
 
-        bodies.emplace_back( 7.34e2, 1.740, glm::vec3{15.57f, 0.0f, 0.0f}, glm::vec3{0.0f, 0.0f, 192.0f} );
-        bodies.emplace_back(5.972e4, 6.371, glm::vec3{0.0f}, glm::vec3{0.0f, 0.0f, -192.0f} );
-        bodies.emplace_back(5.972e4, 6.371, glm::vec3{0.0f, 25.0f, 0.0f}, glm::vec3{0.0f, 0.0f, 0.0f} );
-
         m_Camera.MovementSpeed = 60.0f;
 
         s_Instance = this;
+
+        m_SimulationLayer = new SimulationLayer();
+        PushLayer(m_SimulationLayer);
     }
 
     Application::~Application() {
         s_Instance = nullptr;
+    }
+
+    void Application::PushLayer(Layer *layer) {
+        m_LayerStack.PushLayer(layer);
+    }
+
+    void Application::PushOverlay(Layer *layer) {
+        m_LayerStack.PushOverlay(layer);
     }
 
     void Application::MouseCallback(double xposIn, double yposIn) {
@@ -81,11 +88,6 @@ namespace Simulator {
     void Application::Run() {
         glfwSetInputMode((GLFWwindow*)m_Window->GetNativeWindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
-        // TRIANGLE TEST
-        for (auto &body: bodies) {
-            body.Init();
-        }
-
         int initial_framebuffer_width, initial_framebuffer_height;
         glfwGetFramebufferSize((GLFWwindow*)m_Window->GetNativeWindow(), &initial_framebuffer_width,
                                  &initial_framebuffer_height);
@@ -100,9 +102,6 @@ namespace Simulator {
 
             OnUpdate(timestep);
 
-
-            OnRender();
-
             m_Window->OnUpdate();
         }
 
@@ -113,25 +112,19 @@ namespace Simulator {
             m_Running = false;
         }
 
-        for (auto &body: bodies) {
-            body.UpdateVelocity(bodies, 0.01f);
-        }
-
-        for (auto &body: bodies) {
-            body.UpdatePosition(0.01f);
-        }
-
         m_Camera.OnUpdate(ts);
-    }
 
-    void Application::OnRender() {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glClearColor(0.0, 0.0, 0.0, 1.0);
 
-        for (auto &body: bodies) {
-            body.Render(m_Camera.GetViewMatrix());
-        }
+        for (Layer* layer : m_LayerStack)
+            layer->OnUpdate(ts);
+
+        // for (Layer* layer : m_LayerStack)
+        //     layer->OnImGuiRender();
+
     }
+
 
     Application & Application::Get() {
         return *s_Instance;
